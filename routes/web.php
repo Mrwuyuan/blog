@@ -1,6 +1,20 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+/*
+|--------------------------------------------------------------------------
+| WeiBo Routes
+|--------------------------------------------------------------------------
+|
+|
+*/
+
+Route::get('/','StaticPagesController@home');
+Route::get('/help','StaticPagesController@help');
+Route::get('/about','StaticPagesController@about');
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,20 +27,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/demoView', function () {
-    return view('demo');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+//Route::get('/demoView', function () {
+//    return view('demo');
+//});
+//
+//Route::get('/user','UserController@index');
+//
+//
+//Route::get('/demo','Demo@index');
+//
+//
+//Route::redirect('/redirect', '/demo');
+//Route::prefix('prefix')->group(function () {
+//    Route::redirect('/redirect', '/demo');
+//});
 
-Route::get('/user','UserController@index');
-
-
-Route::get('/demo','Demo@index');
-
-
-Route::redirect('/redirect', '/demo');
-Route::prefix('prefix')->group(function () {
-    Route::redirect('/redirect', '/demo');
-});
